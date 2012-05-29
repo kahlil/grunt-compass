@@ -10,10 +10,10 @@ module.exports = function( grunt ) {
 
             grunt.log.write( '\n\nCOMPASS output:\n' );
             grunt.log.write( stdout );
-            console.error( stderr );
+            grunt.log.error( stderr );
 
             if ( error !== null ) {
-                grunt.log.write( 'error: ' + error );
+                grunt.log.error( error );
             }
         }
 
