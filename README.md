@@ -8,8 +8,8 @@ This is a custom grunt.js task that executes `compass compile` for you.
 e.g.:
 
 ````javascript
-     watch: {
-        files: ['assets/scss/partials/*.scss'],
-        tasks: ['compass']
-    }
+watch: {
+    files: ['assets/scss/partials/*.scss'],
+    tasks: ['compass']
+}
 ````
