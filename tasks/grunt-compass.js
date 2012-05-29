@@ -1,22 +1,22 @@
-
-module.exports = function(grunt) {
+module.exports = function( grunt ) {
 
     // Create a new task.
-    grunt.registerTask('compass', 'This triggers the \'compass compile\' command.', function() {
+    grunt.registerTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
         var exec = require('child_process').exec;
-        grunt.log.write('\'compass compile\' was inititated.' );
+        grunt.log.write( '`compass compile` was inititated.' );
 
-        function puts(error, stdout, stderr) {
-            grunt.log.write('\n\nCOMPASS output:\n');
-            grunt.log.write(stdout);
+        function puts( error, stdout, stderr ) {
+
+            grunt.log.write( '\n\nCOMPASS output:\n' );
+            grunt.log.write( stdout );
+            console.error( stderr );
+
             if ( error !== null ) {
-                grunt.log.write('error: ' + error);
+                grunt.log.write( 'error: ' + error );
             }
         }
 
-        exec("compass compile", puts);
-
+        exec( "compass compile", puts );
     });
-
 };
