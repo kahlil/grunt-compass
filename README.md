@@ -7,7 +7,9 @@ This is a custom grunt.js task that executes `compass compile` for you.
 3. Configure `grunt watch` to watch your scss files and call the task.
 e.g.:
 
+````javascript
      watch: {
         files: ['assets/scss/partials/*.scss'],
         tasks: ['compass']
     }
+````
