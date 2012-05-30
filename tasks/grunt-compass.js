@@ -4,13 +4,15 @@ module.exports = function( grunt ) {
     grunt.registerTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
         var exec = require('child_process').exec;
-        grunt.log.write( '`compass compile` was inititated.' );
+        grunt.log.write( '`compass compile` was initiated.' );
 
         function puts( error, stdout, stderr ) {
 
             grunt.log.write( '\n\nCOMPASS output:\n' );
             grunt.log.write( stdout );
             grunt.log.error( stderr );
+
+
 
             if ( error !== null ) {
                 grunt.log.error( error );
