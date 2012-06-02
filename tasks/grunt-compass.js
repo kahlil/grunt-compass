@@ -3,8 +3,15 @@ module.exports = function( grunt ) {
     // Create a new task.
     grunt.registerTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
-        var exec = require('child_process').exec;
-        grunt.log.write( '`compass compile` was initiated.' );
+        var exec = require('child_process').exec,
+            command = "compass compile",
+            src = grunt.config('compass.src'),
+            dest = grunt.config('compass.dest');
+
+        if (src !== undefined &&
+            dest !== undefined) {
+            command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+        }
 
         function puts( error, stdout, stderr ) {
 
@@ -12,13 +19,12 @@ module.exports = function( grunt ) {
             grunt.log.write( stdout );
             grunt.log.error( stderr );
 
-
-
             if ( error !== null ) {
                 grunt.log.error( error );
             }
         }
 
-        exec( "compass compile", puts );
+        exec( command, puts );
+        grunt.log.write( '`' + command + '` was initiated.' );
     });
 };
