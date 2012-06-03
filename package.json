@@ -26,14 +26,11 @@
   "engines": {
     "node": "*"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
     "grunt": ">=0.3.7"
   },
   "devDependencies": {
     "grunt": ">=0.3.7"
   },
-  "keywords": []
+  "keywords": ["grunt.js", "sass", "compass"]
 }
