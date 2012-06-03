@@ -1,0 +1,14 @@
+{
+    "name": "grunt-compass",
+    "version": "0.2.0",
+    "description": "A custom grunt.js task that executes compass compile for you and prints the COMPASS output to grunt.log.write().",
+    "author": "Kahlil Lechelt <kahlil@kahlil.co>",
+    "dependencies": {
+        "grunt": ">= 0.3.9"
+    },
+    "repository" : {
+        "type": "git",
+        "url": "https://kahlil@github.com/kahlil/grunt-compass.git"
+    },
+    "engines": { "node": "*" }
+}
