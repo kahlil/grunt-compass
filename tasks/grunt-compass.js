@@ -1,14 +1,14 @@
 module.exports = function( grunt ) {
 
-    // Create a new task.
-    grunt.registerTask( 'compass', 'This triggers the `compass compile` command.', function() {
+    // Create a new multi task.
+    grunt.registerMultiTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
         var exec = require('child_process').exec,
             command = "compass compile",
-            src = grunt.config('compass.src'),
-            dest = grunt.config('compass.dest'),
-            outputstyle = grunt.config('compass.outputstyle'),
-            linecomments = grunt.config('comments.linecomments');
+            src = this.data.src,
+            dest = this.data.dest,
+            outputstyle = this.data.outputstyle,
+            linecomments = this.data.linecomments;
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
