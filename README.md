@@ -1,4 +1,4 @@
-# `compass compile` for grunt.js
+# `compass compile` for Grunt.js
 
 This is a custom grunt.js task that executes `compass compile` for you and prints the COMPASS output to `grunt.log.write()`.
 
