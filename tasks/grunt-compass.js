@@ -3,7 +3,9 @@ module.exports = function( grunt ) {
     // Create a new multi task.
     grunt.registerMultiTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
-        var exec = require('child_process').exec,
+        // Tell grunt this task is asynchronous.
+        var done = this.async(),
+            exec = require('child_process').exec,
             command = "compass compile",
             src = this.data.src,
             dest = this.data.dest,
@@ -26,10 +28,17 @@ module.exports = function( grunt ) {
 
             grunt.log.write( '\n\nCOMPASS output:\n' );
             grunt.log.write( stdout );
-            grunt.log.error( stderr );
+            /* grunt.log.error( stderr );
+             * compass sends falsy error message to stderr... real sass/compass errors come in through the "error" variable.
+             */
 
             if ( error !== null ) {
                 grunt.log.error( error );
+                done(false);
+            }
+            else
+            {
+                done(true);
             }
         }
 
