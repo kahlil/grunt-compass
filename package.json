@@ -1,14 +1,39 @@
 {
-    "name": "grunt-compass",
-    "version": "0.2.0",
-    "description": "A custom grunt.js task that executes compass compile for you and prints the COMPASS output to grunt.log.write().",
-    "author": "Kahlil Lechelt <kahlil@kahlil.co>",
-    "dependencies": {
-        "grunt": ">= 0.3.9"
-    },
-    "repository" : {
-        "type": "git",
-        "url": "https://kahlil@github.com/kahlil/grunt-compass.git"
-    },
-    "engines": { "node": "*" }
+  "name": "grunt-compass",
+  "description": "A custom grunt.js task that executes compass compile for you and prints the COMPASS output to grunt.log.write().",
+  "version": "0.2.2",
+  "homepage": "https://github.com/kahlil/grunt-compass",
+  "author": {
+    "name": "Kahlil Lechelt",
+    "email": "kahlil@kahlil.co",
+    "url": "http://kahlil.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kahlil/grunt-compass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kahlil/grunt-compass/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kahlil/grunt-compass/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "bin": "bin/grunt-compass",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt": ">=0.3.7"
+  },
+  "devDependencies": {
+    "grunt": ">=0.3.7"
+  },
+  "keywords": []
 }
