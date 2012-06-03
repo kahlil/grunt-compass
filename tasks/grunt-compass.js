@@ -6,11 +6,20 @@ module.exports = function( grunt ) {
         var exec = require('child_process').exec,
             command = "compass compile",
             src = grunt.config('compass.src'),
-            dest = grunt.config('compass.dest');
+            dest = grunt.config('compass.dest'),
+            outputstyle = grunt.config('compass.outputstyle'),
+            linecomments = grunt.config('comments.linecomments');
 
-        if (src !== undefined &&
-            dest !== undefined) {
+        if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+        }
+
+        if ( outputstyle !== undefined ) {
+            command += ' --output-style ' + outputstyle;
+        }
+
+        if ( linecomments === false ) {
+            command += ' --no-line-comments';
         }
 
         function puts( error, stdout, stderr ) {
