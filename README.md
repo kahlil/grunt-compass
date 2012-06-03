@@ -32,18 +32,18 @@ This is a custom grunt.js task that executes `compass compile` for you and print
 		```
 5. You can set your custom output style like this:
 
-```javascript
-compass: {
-    outputstyle: 'compressed'
-}
-```
+    ```javascript
+    compass: {
+        outputstyle: 'compressed'
+    }
+    ```
 6. You can disable line comments like this:
 
-```javascript
-compass: {
-    linecomments: false
-}
-```
+    ```javascript
+    compass: {
+        linecomments: false
+    }
+    ```
 7. Run "grunt watch" and change some SASS files :)
 
 _**Notice:** At this moment this task doesn't work with `grunt` or `grunt compass` only with `grunt watch`. Calling `grunt compass` only creates the folders, not the files!_
