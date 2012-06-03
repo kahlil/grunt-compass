@@ -44,5 +44,3 @@ This is a custom grunt.js task that executes `compass compile` for you and print
     }
     ```
 6. Run "grunt watch" and change some SASS files :)
-
-_**Notice:** At this moment this task doesn't work with `grunt` or `grunt compass` only with `grunt watch`. Calling `grunt compass` only creates the folders, not the files!_
