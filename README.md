@@ -54,6 +54,8 @@ This is a custom grunt.js task that executes `compass compile` for you and print
 
 ----
 
+# LICENSE MIT
+
 Copyright (c) 2012 Kahlil Lechelt
 
 Permission is hereby granted, free of charge, to any person
