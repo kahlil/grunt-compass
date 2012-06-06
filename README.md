@@ -1,6 +1,6 @@
 # `compass compile` for Grunt.js
 
-This is a custom grunt.js task that executes `compass compile` for you and prints the COMPASS output to `grunt.log.write()`.
+This is a custom grunt.js multitask that executes `compass compile` for you and prints the COMPASS output to `grunt.log.write()`.
 
 1. Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-compass`.
 2. Call `grunt.loadNpmTasks('grunt-compass')` in your gruntfile.
