@@ -61,6 +61,9 @@ This is a custom grunt.js multitask that executes `compass compile` for you and 
     ```
 8. Run "grunt watch" and change some SASS files :)
 
+# Real World Examples
+* [krzysu](https://github.com/krzysu) posted a Gist with his `compass compile` configuration [over here](https://gist.github.com/2917330).
+
 # Changelog
 
 v0.2.8: Added an option to force compilation of SASS files via the `--force` option.
