@@ -50,7 +50,20 @@ This is a custom grunt.js multitask that executes `compass compile` for you and 
         }
     }
     ```
-7. Run "grunt watch" and change some SASS files :)
+7. If you have multiple compass tasks and you want to force compass compilation you can do this:
+
+    ```javascript
+    compass: {
+        somename: {
+            forcecompile: true
+        }
+    }
+    ```
+8. Run "grunt watch" and change some SASS files :)
+
+# Changelog
+
+v0.2.8: Added an option to force compilation of SASS files via the `--force` option.
 
 ----
 

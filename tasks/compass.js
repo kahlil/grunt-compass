@@ -10,7 +10,8 @@ module.exports = function( grunt ) {
             src = this.data.src,
             dest = this.data.dest,
             outputstyle = this.data.outputstyle,
-            linecomments = this.data.linecomments;
+            linecomments = this.data.linecomments,
+            forcecompile = this.data.forcecompile;
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
@@ -22,6 +23,10 @@ module.exports = function( grunt ) {
 
         if ( linecomments === false ) {
             command += ' --no-line-comments';
+        }
+
+        if ( forcecompile === true ) {
+            command += ' --force';
         }
 
         function puts( error, stdout, stderr ) {
