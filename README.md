@@ -63,6 +63,7 @@ This is a custom grunt.js multitask that executes `compass compile` for you and 
 
 # Real World Examples
 * [krzysu](https://github.com/krzysu) posted a Gist with his `compass compile` configuration [over here](https://gist.github.com/2917330).
+* [javiervd](https://github.com/javiervd) kindly shares his grunt.js setup [over here](https://gist.github.com/2941501).
 
 # Changelog
 
