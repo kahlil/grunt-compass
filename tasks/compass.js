@@ -11,7 +11,8 @@ module.exports = function( grunt ) {
             dest = this.data.dest,
             outputstyle = this.data.outputstyle,
             linecomments = this.data.linecomments,
-            forcecompile = this.data.forcecompile;
+            forcecompile = this.data.forcecompile,
+            libRequire = this.data.require;
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
@@ -23,6 +24,10 @@ module.exports = function( grunt ) {
 
         if ( linecomments === false ) {
             command += ' --no-line-comments';
+        }
+
+        if(libRequire !== undefined){
+            command += ' --require '+ libRequire;
         }
 
         if ( forcecompile === true ) {
