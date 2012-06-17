@@ -59,7 +59,18 @@ This is a custom grunt.js multitask that executes `compass compile` for you and 
         }
     }
     ```
-8. Run "grunt watch" and change some SASS files :)
+
+8. You can require a given ruby library before running commands
+
+    ```javascript
+    compass: {
+        somename: {
+            require: 'animate-sass mylib'
+        }
+    }
+    ```
+
+9. Run "grunt watch" and change some SASS files :)
 
 # Real World Examples
 * [krzysu](https://github.com/krzysu) posted a Gist with his `compass compile` configuration [over here](https://gist.github.com/2917330).
