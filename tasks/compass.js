@@ -12,10 +12,17 @@ module.exports = function( grunt ) {
             outputstyle = this.data.outputstyle,
             linecomments = this.data.linecomments,
             forcecompile = this.data.forcecompile,
+            debugsass = this.data.debugsass,
             libRequire = this.data.require;
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+        }
+
+        if ( debugsass !== undefined ) {
+            if ( debugsass === true ) {
+                command += ' --debug-info';
+            }
         }
 
         if ( outputstyle !== undefined ) {
