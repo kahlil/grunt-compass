@@ -79,6 +79,8 @@ This is a custom grunt.js multitask that executes `compass compile` on the comma
 
 # Changelog
 
+v0.2.11: @[gcpantazis](https://github.com/gcpantazis) added the option to set the `--debug-info` flag for Sass, useful for integration with the FireSass debugger.
+
 v0.2.10: Added 'gruntplugin' as a keyword in the package.json to get listed [here](http://jsfiddle.net/cowboy/qzRjD/show/).
 
 v0.2.9: Ability to require a given ruby lib before running commands. Added by @[FGRibreau](https://github.com/FGRibreau).
