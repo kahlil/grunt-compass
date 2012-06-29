@@ -78,7 +78,9 @@ This is a custom grunt.js multitask that executes `compass compile` for you and 
 
 # Changelog
 
-v0.2.10: Ability to require a given ruby lib before running commands. Added by @FGRibreau.
+v0.2.10: Added 'gruntplugin' as a keyword in the package.json to get listed [here](http://jsfiddle.net/cowboy/qzRjD/show/).
+
+v0.2.9: Ability to require a given ruby lib before running commands. Added by @[FGRibreau](https://github.com/FGRibreau).
 
 v0.2.8: Added an option to force compilation of SASS files via the `--force` option.
 
