@@ -70,7 +70,18 @@ This is a custom grunt.js multitask that executes `compass compile` on the comma
     }
     ```
 
-9. Run "grunt watch" and change some SASS files :)
+9. You can add the `--debug-info` option for use with [FireSass](https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/) like so:
+
+    ```javascript
+    compass: {
+        somename: {
+            debugsass: true
+        }
+    }
+    ```
+
+
+10. Run "grunt watch" and change some SASS files :)
 
 # Real World Examples
 
