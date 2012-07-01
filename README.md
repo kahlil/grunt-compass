@@ -2,6 +2,12 @@
 
 This is a custom grunt.js multitask that executes `compass compile` on the command line for you and prints the COMPASS output to `grunt.log.write()`.
 
+## Dependencies
+
+You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/cowboy/grunt), [Ruby](http://www.ruby-lang.org/), [SASS](http://sass-lang.com/) and [Compass](http://compass-style.org/) installed for this to work.
+
+## Installation & Options
+
 1. Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-compass`.
 2. Call `grunt.loadNpmTasks('grunt-compass')` in your gruntfile.
 3. Configure `grunt watch` to watch your scss files and call the task.
