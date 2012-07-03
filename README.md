@@ -86,8 +86,19 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     }
     ```
 
+10. You can set the relative assets to `true` and set an image path for Compass spriting feature:
 
-10. Run "grunt watch" and change some SASS files :)
+    ```javascript
+    compass: {
+        somename: {
+            images: '/path/to/images',
+            relativeassets: true
+        }
+    }
+    ```
+
+
+11. Run "grunt watch" and change some SASS files :)
 
 # Real World Examples
 
@@ -95,6 +106,8 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 * [javiervd](https://github.com/javiervd) kindly shares his grunt.js setup [over here](https://gist.github.com/2941501).
 
 # Changelog
+
+v0.2.11: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
 
 v0.2.11: @[gcpantazis](https://github.com/gcpantazis) added the option to set the `--debug-info` flag for Sass, useful for integration with the FireSass debugger.
 
