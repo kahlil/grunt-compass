@@ -27,8 +27,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     dest: 'assets/css/partials'
 	```
 
-	"src" is the folder with sass/scss files.
-	"dest" is the file where the css files will be place.
+	`src` is the folder with sass or scss files and `dest` is the file where the css files will be placed.
 
 5. You can set your custom output style like this:
 
