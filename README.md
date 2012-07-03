@@ -103,11 +103,10 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 # An Example Setup
 
 ```javascript
-...
 compass: {
     dev: {
         src: 'assets/scss',
-        dest: 'assets/css',
+        dest: 'assets/dev/css',
         linecomments: true,
         forcecompile: true,
         require: 'animate-sass mylib',
@@ -117,7 +116,7 @@ compass: {
     },
     prod: {
         src: 'assets/scss',
-        dest: 'assets/css',
+        dest: 'assets/prod/css',
         outputstyle: 'compressed',
         linecomments: false,
         forcecompile: true,
@@ -127,7 +126,6 @@ compass: {
         relativeassets: true
     }
 }
-...
 ```
 
 # Real World Examples
