@@ -20,83 +20,49 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 	}
 	```
 
-4. Setup the config for compass in your grunt config, or setup a compass config file:
-	* Option 1: Set the configuration for compass in your grunt.js file:
+4. Setup your SASS and CSS paths
 
-		```javascript
-		compass: {
-            somename: {
-                src: 'assets/scss/partials',
-                dest: 'assets/css/partials'
-            }
-		}
-		```
+	```javascript
+    src: 'assets/scss/partials',
+    dest: 'assets/css/partials'
+	```
 
-		"src" is the folder with sass/scss files.
-		"dest" is the file where the css files will be place.
-	* Option 2: Setup a compass project
-		```
-		compass install compass
-		```
+	"src" is the folder with sass/scss files.
+	"dest" is the file where the css files will be place.
+
 5. You can set your custom output style like this:
 
     ```javascript
-    compass: {
-        somename: {
-            outputstyle: 'compressed'
-        }
-    }
+    outputstyle: 'compressed'
     ```
 6. You can disable line comments like this:
 
     ```javascript
-    compass: {
-        somename: {
-            linecomments: false
-        }
-    }
+    linecomments: false
     ```
 7. If you have multiple compass tasks and you want to force compass compilation you can do this:
 
     ```javascript
-    compass: {
-        somename: {
-            forcecompile: true
-        }
-    }
+    forcecompile: true
     ```
-
 8. You can require a given ruby library before running commands
 
     ```javascript
-    compass: {
-        somename: {
-            require: 'animate-sass mylib'
-        }
-    }
+    require: 'animate-sass mylib'
     ```
 
 9. You can add the `--debug-info` option for use with [FireSass](https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/) like so:
 
     ```javascript
-    compass: {
-        somename: {
-            debugsass: true
-        }
-    }
+    debugsass: true
     ```
 
 10. You can set the relative assets to `true` and set an image path for Compass spriting feature:
 
     ```javascript
-    compass: {
-        somename: {
-            images: '/path/to/images',
-            relativeassets: true
-        }
-    }
+    images: '/path/to/images',
+    relativeassets: true
     ```
-
 
 11. Run "grunt watch" and change some SASS files :)
 
