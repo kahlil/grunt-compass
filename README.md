@@ -10,12 +10,13 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 1. Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-compass`.
 2. Call `grunt.loadNpmTasks('grunt-compass')` in your gruntfile.
-3. Configure `grunt watch` to watch your scss files and call the task.
+3. Configure `grunt watch` to watch your scss files and call the task(s).
 	e.g.:
 
 	```javascript
 	watch: {
 	    files: ['assets/scss/partials/*.scss'],
+        // These are the tasks from the [example setup](https://github.com/kahlil/grunt-compass#an-example-setup)
 	    tasks: ['compass:dev', 'compass:prod']
 	}
 	```
