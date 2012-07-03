@@ -1,6 +1,6 @@
 # grunt-compass
 
-This is a custom grunt.js multitask that executes `compass compile` on the command line for you and prints the COMPASS output to `grunt.log.write()`.
+This is a custom grunt.js multitask aka [gruntplugin](http://jsfiddle.net/cowboy/qzRjD/show/) that executes `compass compile` on the command line for you and prints the COMPASS output to `grunt.log.write()`.
 
 ## Dependencies
 
