@@ -102,33 +102,33 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 # An Example Setup
 
-    ```javascript
-    ...
-    compass: {
-        dev: {
-            src: 'assets/scss',
-            dest: 'assets/css',
-            linecomments: true,
-            forcecompile: true,
-            require: 'animate-sass mylib',
-            debugsass: true,
-            images: '/path/to/images',
-            relativeassets: true
-        },
-        prod: {
-            src: 'assets/scss',
-            dest: 'assets/css',
-            outputstyle: 'compressed',
-            linecomments: false,
-            forcecompile: true,
-            require: 'animate-sass mylib',
-            debugsass: false,
-            images: '/path/to/images',
-            relativeassets: true
-        }
+```javascript
+...
+compass: {
+    dev: {
+        src: 'assets/scss',
+        dest: 'assets/css',
+        linecomments: true,
+        forcecompile: true,
+        require: 'animate-sass mylib',
+        debugsass: true,
+        images: '/path/to/images',
+        relativeassets: true
+    },
+    prod: {
+        src: 'assets/scss',
+        dest: 'assets/css',
+        outputstyle: 'compressed',
+        linecomments: false,
+        forcecompile: true,
+        require: 'animate-sass mylib',
+        debugsass: false,
+        images: '/path/to/images',
+        relativeassets: true
     }
-    ...
-    ```
+}
+...
+```
 
 # Real World Examples
 
