@@ -135,7 +135,7 @@ compass: {
 
 # Changelog
 
-v0.2.11: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
+v0.2.12: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
 
 v0.2.11: @[gcpantazis](https://github.com/gcpantazis) added the option to set the `--debug-info` flag for Sass, useful for integration with the FireSass debugger.
 
