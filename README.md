@@ -16,7 +16,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 	```javascript
 	watch: {
 	    files: ['assets/scss/partials/*.scss'],
-	    tasks: ['compass:somename']
+	    tasks: ['compass:dev', 'compass:prod']
 	}
 	```
 
@@ -44,7 +44,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     ```javascript
     forcecompile: true
     ```
-8. You can require a given ruby library before running commands
+8. You can require a given ruby library before running commands like this:
 
     ```javascript
     require: 'animate-sass mylib'
