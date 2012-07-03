@@ -9,19 +9,31 @@ module.exports = function( grunt ) {
             command = "compass compile",
             src = this.data.src,
             dest = this.data.dest,
+            images = this.data.images,
             outputstyle = this.data.outputstyle,
             linecomments = this.data.linecomments,
             forcecompile = this.data.forcecompile,
             debugsass = this.data.debugsass,
+            relativeassets = this.data.relativeassets,
             libRequire = this.data.require;
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
         }
 
+        if ( images !== undefined ) {
+            command += ' --images-dir="' + images + '"';
+        }
+
         if ( debugsass !== undefined ) {
             if ( debugsass === true ) {
                 command += ' --debug-info';
+            }
+        }
+
+        if ( relativeassets !== undefined ) {
+            if ( relativeassets === true ) {
+                command += ' --relative-assets';
             }
         }
 
