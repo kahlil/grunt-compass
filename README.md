@@ -16,7 +16,6 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 	```javascript
 	watch: {
 	    files: ['assets/scss/partials/*.scss'],
-        // These are the tasks from the [example setup](https://github.com/kahlil/grunt-compass#an-example-setup)
 	    tasks: ['compass:dev', 'compass:prod']
 	}
 	```
