@@ -15,7 +15,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 	```javascript
 	watch: {
-	    files: ['assets/scss/partials/*.scss'],
+	    files: ['assets/scss/*.scss'],
 	    tasks: ['compass:dev', 'compass:prod']
 	}
 	```
@@ -23,8 +23,8 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 4. Setup your SASS and CSS paths
 
 	```javascript
-    src: 'assets/scss/partials',
-    dest: 'assets/css/partials'
+    src: 'assets/scss',
+    dest: 'assets/css'
 	```
 
 	`src` is the folder with sass or scss files and `dest` is the folder where the css files will be placed.
