@@ -7,9 +7,10 @@ module.exports = function( grunt ) {
         var done = this.async(),
             exec = require('child_process').exec,
             command = "compass compile",
-            src = grunt.template.process(this.data.src),
-            dest = grunt.template.process(this.data.dest),
+            src = undefined,
+            dest = undefined,
             images = this.data.images,
+            fonts = this.data.fonts,
             outputstyle = this.data.outputstyle,
             linecomments = this.data.linecomments,
             forcecompile = this.data.forcecompile,
@@ -17,12 +18,24 @@ module.exports = function( grunt ) {
             relativeassets = this.data.relativeassets,
             libRequire = this.data.require;
 
+        if ( this.data.src !== undefined ) {
+            src = grunt.template.process(this.data.src);
+        }
+
+        if ( this.data.dest !== undefined ) {
+            dest = grunt.template.process(this.data.dest);
+        }
+
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
         }
 
         if ( images !== undefined ) {
             command += ' --images-dir="' + images + '"';
+        }
+
+        if ( fonts !== undefined ) {
+            command += ' --fonts-dir="' + fonts + '"';
         }
 
         if ( debugsass !== undefined ) {
@@ -45,7 +58,7 @@ module.exports = function( grunt ) {
             command += ' --no-line-comments';
         }
 
-        if(libRequire !== undefined){
+        if ( libRequire !== undefined ) {
             command += ' --require '+ libRequire;
         }
 
@@ -65,8 +78,7 @@ module.exports = function( grunt ) {
                 grunt.log.error( error );
                 done(false);
             }
-            else
-            {
+            else {
                 done(true);
             }
         }
