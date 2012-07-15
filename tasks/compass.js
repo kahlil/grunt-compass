@@ -10,6 +10,7 @@ module.exports = function( grunt ) {
             src = grunt.template.process(this.data.src),
             dest = grunt.template.process(this.data.dest),
             images = this.data.images,
+            fonts = this.data.fonts,
             outputstyle = this.data.outputstyle,
             linecomments = this.data.linecomments,
             forcecompile = this.data.forcecompile,
@@ -23,6 +24,10 @@ module.exports = function( grunt ) {
 
         if ( images !== undefined ) {
             command += ' --images-dir="' + images + '"';
+        }
+
+        if ( fonts !== undefined ) {
+            command += ' --fonts-dir="' + fonts + '"';
         }
 
         if ( debugsass !== undefined ) {
