@@ -100,6 +100,8 @@ compass: {
 
 # Changelog
 
+v0.2.14: @[nebelschwade](https://github.com/nebelschwade) added `fonts-dir` option and fixed issue with config.rb due to changes in last version.
+
 v0.2.13: Added `grunt.template.process()` function to process `src` and `dest` paths. Suggested by @[necolas](https://github.com/necolas) in issue #9.
 
 v0.2.12: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
