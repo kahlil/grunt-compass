@@ -7,8 +7,8 @@ module.exports = function( grunt ) {
         var done = this.async(),
             exec = require('child_process').exec,
             command = "compass compile",
-            src = grunt.template.process(this.data.src),
-            dest = grunt.template.process(this.data.dest),
+            src = undefined,
+            dest = undefined,
             images = this.data.images,
             fonts = this.data.fonts,
             outputstyle = this.data.outputstyle,
@@ -17,6 +17,14 @@ module.exports = function( grunt ) {
             debugsass = this.data.debugsass,
             relativeassets = this.data.relativeassets,
             libRequire = this.data.require;
+
+        if ( this.data.src !== undefined ) {
+            src = grunt.template.process(this.data.src);
+        }
+
+        if ( this.data.dest !== undefined ) {
+            dest = grunt.template.process(this.data.dest);
+        }
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
