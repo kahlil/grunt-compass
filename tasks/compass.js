@@ -45,7 +45,7 @@ module.exports = function( grunt ) {
             command += ' --no-line-comments';
         }
 
-        if(libRequire !== undefined){
+        if ( libRequire !== undefined ) {
             command += ' --require '+ libRequire;
         }
 
@@ -65,8 +65,7 @@ module.exports = function( grunt ) {
                 grunt.log.error( error );
                 done(false);
             }
-            else
-            {
+            else {
                 done(true);
             }
         }
