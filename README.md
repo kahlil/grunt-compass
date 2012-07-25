@@ -56,14 +56,14 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     debugsass: true
     ```
 
-10. You can set the relative assets to `true` and set an image path for Compass spriting feature:
+10. You can set the relative assets to `true` and set an image path for the Compass spriting feature:
 
     ```javascript
     images: '/path/to/images',
     relativeassets: true
     ```
 
-11. Run "grunt watch" and change some SASS files :)
+11. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
 
