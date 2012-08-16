@@ -63,7 +63,13 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     relativeassets: true
     ```
 
-11. Run "grunt watch" and edit some SASS files :)
+11. You can run compass with bundle exec if you need to as well:
+
+    ```javascript
+    bundleExec: true
+    ```
+
+12. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
 
