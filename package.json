@@ -27,7 +27,6 @@
     "node": "*"
   },
   "dependencies": {
-    "grunt": ">=0.3.7"
   },
   "devDependencies": {
     "grunt": ">=0.3.7"
