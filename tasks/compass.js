@@ -16,7 +16,8 @@ module.exports = function( grunt ) {
             forcecompile = this.data.forcecompile,
             debugsass = this.data.debugsass,
             relativeassets = this.data.relativeassets,
-            libRequire = this.data.require;
+            libRequire = this.data.require,
+            bundleExec = this.data.bundleExec;
 
         if ( this.data.src !== undefined ) {
             src = grunt.template.process(this.data.src);
@@ -24,6 +25,10 @@ module.exports = function( grunt ) {
 
         if ( this.data.dest !== undefined ) {
             dest = grunt.template.process(this.data.dest);
+        }
+
+        if ( bundleExec ) {
+            command = 'bundle exec ' + command;
         }
 
         if ( src !== undefined && dest !== undefined ) {
