@@ -68,13 +68,13 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     ```javascript
     bundleExec: true
     ```
-    
+
 12. If you have a Compass configuration file, you can use it instead of or in addition to the options in your gruntfile:
 
     ```javascript
     config: '/path/to/config'
     ```
-    
+
     If the path is not absolute, it is relative to the directory containing your gruntfile.
 
 13. Run "grunt watch" and edit some SASS files :)
@@ -116,14 +116,7 @@ compass: {
 
 v0.2.14: @[nebelschwade](https://github.com/nebelschwade) added `fonts-dir` option and fixed issue with config.rb due to changes in last version.
 
-v0.2.13: Added `gron! NumberToggle()
-  if(&relativenumber == 1)
-	      set number
-	        else
-			    set relativenumber
-			      endif
-			      endfunc:q
-			      ion to process `src` and `dest` paths. Suggested by @[necolas](https://github.com/necolas) in issue #9.
+v0.2.13: Added `grunt.template.process()` function to process `src` and `dest` paths. Suggested by @[necolas](https://github.com/necolas) in issue #9.
 
 v0.2.12: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
 
