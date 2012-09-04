@@ -69,7 +69,15 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     bundleExec: true
     ```
 
-12. Run "grunt watch" and edit some SASS files :)
+12. If you have a Compass configuration file, you can use it instead of or in addition to the options in your gruntfile:
+
+    ```javascript
+    config: '/path/to/config'
+    ```
+
+    If the path is not absolute, it is relative to the directory containing your gruntfile.
+
+13. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
 

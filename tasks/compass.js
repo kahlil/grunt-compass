@@ -9,6 +9,7 @@ module.exports = function( grunt ) {
             command = "compass compile",
             src = undefined,
             dest = undefined,
+            config = this.data.config,
             images = this.data.images,
             fonts = this.data.fonts,
             outputstyle = this.data.outputstyle,
@@ -33,6 +34,10 @@ module.exports = function( grunt ) {
 
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+        }
+
+        if ( config !== undefined ) {
+            command += ' --config="' + config + '"';
         }
 
         if ( images !== undefined ) {
