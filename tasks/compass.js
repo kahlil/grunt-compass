@@ -19,6 +19,7 @@ module.exports = function( grunt ) {
             relativeassets = this.data.relativeassets,
             libRequire = this.data.require,
             bundleExec = this.data.bundleExec;
+            environment = this.data.environment;
 
         if ( this.data.src !== undefined ) {
             src = grunt.template.process(this.data.src);
@@ -74,6 +75,10 @@ module.exports = function( grunt ) {
 
         if ( forcecompile === true ) {
             command += ' --force';
+        }
+
+        if ( environment !== undefined ) {
+            command += ' -e ' + environment;
         }
 
         function puts( error, stdout, stderr ) {

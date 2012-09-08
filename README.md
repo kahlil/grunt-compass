@@ -77,6 +77,18 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
     If the path is not absolute, it is relative to the directory containing your gruntfile.
 
+13. If you have a Compass configuration file, you set the environment variable for the config.rb file:
+
+    ```javascript
+    environment: 'production'
+    ```
+
+    Then use it in your config.rb like so:
+
+    ```ruby
+    output_style = (environment == :production) ? :compressed : :expanded
+    ```
+
 13. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
