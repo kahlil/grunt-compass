@@ -98,6 +98,8 @@ Now grunt-compass comes with a `grunt compass-clean` task that you can use when 
 grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
 ```
 
+Or just use it in watch task.
+
 14. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
