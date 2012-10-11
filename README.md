@@ -44,6 +44,8 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 	src: 'assets/scss/**/*.scss' // Match all scss files under `assets/scss` include files in subdirctory.
 	```
 
+	See [minimatch](https://github.com/isaacs/minimatch) for more globbing usage.
+
 	Note a SASS/SCSS file will be ignored if its filename begin with an underscore `_`. See [SASS-partials](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials).
 
 5. You can set your custom output style like this:
