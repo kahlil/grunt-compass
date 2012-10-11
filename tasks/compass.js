@@ -1,3 +1,6 @@
+var Fs = require( 'fs' );
+var Path = require( 'path' );
+
 module.exports = function( grunt ) {
 
     // Create a new multi task.
@@ -34,7 +37,38 @@ module.exports = function( grunt ) {
         }
 
         if ( src !== undefined && dest !== undefined ) {
-            command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+
+            // Get stats of `src`, `ENOENT` error will be throw out if src is not an regular path.
+            try {
+                var srcStats = Fs.statSync( Path.resolve( process.cwd(), src ));
+            }
+            catch(e){
+                srcStats = undefined;
+            }
+
+            // If `src` is a directory, use option `--sass-dir`.
+            if( srcStats && srcStats.isDirectory() ){
+                command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
+            }
+            // Otherwise use `src` as the argument for command `compile`.
+            else {
+
+                var matchedFiles = grunt.file.expandFiles( src );
+                if( matchedFiles.length > 0 ){
+
+                    // Add all but filename begin with underscore after `compile` command.
+                    matchedFiles.forEach(function( file ){
+                        if( Path.basename(file).charAt( 0 ) != '_' ){
+                            command += ' ' + file;
+                        }
+                    });
+                    command += ' --css-dir="' + dest + '"';
+                }
+                else {
+                    grunt.log.error( 'No file matched with: ' + src );
+                    done(false);
+                }
+            }
         }
 
         if ( config !== undefined ) {
