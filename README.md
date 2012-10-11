@@ -29,6 +29,23 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 	`src` is the folder with sass or scss files and `dest` is the folder where the css files will be placed.
 
+	Also, you can use `src` to specify certain files you want to compile:
+
+	A single file.
+
+	```javascript
+	src: 'assets/scss/base.scss'
+	```
+
+	Use globbing to match files, like:
+
+	```javascript
+	src: 'assets/scss/*.scss' // Match all scss files under `assets/scss` but not include files in subdirctory.
+	src: 'assets/scss/**/*.scss' // Match all scss files under `assets/scss` include files in subdirctory.
+	```
+
+	Note a SASS/SCSS file will be ignored if its filename begin with an underscore `_`. See [SASS-partials](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials).
+
 5. You can set your custom output style like this:
 
     ```javascript
@@ -89,16 +106,14 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     output_style = (environment == :production) ? :compressed : :expanded
     ```
 
-13. `grunt compass-clean`
+13. New task: compass-clean
 
-    Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
-    Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
+Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
+Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
 
-    ```js
-    grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
-    ```
-
-    Or just use it in watch task.
+```js
+grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
+```
 
 14. Run "grunt watch" and edit some SASS files :)
 
