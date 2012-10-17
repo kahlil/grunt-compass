@@ -22,7 +22,8 @@ module.exports = function( grunt ) {
             relativeassets = this.data.relativeassets,
             libRequire = this.data.require,
             bundleExec = this.data.bundleExec;
-            environment = this.data.environment;
+            environment = this.data.environment,
+            importPath = this.data.importPath;
 
         if ( this.data.src !== undefined ) {
             src = grunt.template.process(this.data.src);
@@ -113,6 +114,10 @@ module.exports = function( grunt ) {
 
         if ( environment !== undefined ) {
             command += ' -e ' + environment;
+        }
+
+        if ( importPath !== undefined ) {
+            command += ' -I ' + importPath;
         }
 
         function puts( error, stdout, stderr ) {

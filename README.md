@@ -108,7 +108,14 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     output_style = (environment == :production) ? :compressed : :expanded
     ```
 
-13. New task: compass-clean
+
+14. You can add a custom `IMPORT_PATH` folder, which makes files under the path findable by Sass's `@import` directive:
+
+    ```javascript
+    importPath: '/path/to/importPath'
+    ```
+
+15. `grunt compass-clean`
 
 Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
 Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
@@ -117,7 +124,7 @@ Now grunt-compass comes with a `grunt compass-clean` task that you can use when 
 grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
 ```
 
-14. Run "grunt watch" and edit some SASS files :)
+16. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
 
