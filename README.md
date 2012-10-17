@@ -153,6 +153,7 @@ compass: {
 * [javiervd](https://github.com/javiervd) kindly shares his grunt.js setup [over here](https://gist.github.com/2941501).
 
 # Changelog
+v0.3.1 adds compiling of single files or a minimatch path via the `src` option
 
 v0.2.14: @[nebelschwade](https://github.com/nebelschwade) added `fonts-dir` option and fixed issue with config.rb due to changes in last version.
 
