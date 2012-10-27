@@ -9,14 +9,14 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 ## Installation & Options
 
 1. Install this grunt plugin next to your project's grunt.js gruntfile with: `npm install grunt-compass`.
-2. Call `grunt.loadNpmTasks('grunt-compass')` in your gruntfile.
+2. Call `grunt.loadNpmTasks( 'grunt-compass' )` in your gruntfile.
 3. Configure `grunt watch` to watch your scss files and call the task(s).
 	e.g.:
 
 	```javascript
 	watch: {
-	    files: ['assets/scss/*.scss'],
-	    tasks: ['compass:dev', 'compass:prod']
+	    files: [ 'assets/scss/*.scss' ],
+	    tasks: [ 'compass:dev', 'compass:prod' ]
 	}
 	```
 
@@ -107,7 +107,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     Then use it in your config.rb like so:
 
     ```ruby
-    output_style = (environment == :production) ? :compressed : :expanded
+    output_style = ( environment == :production ) ? :compressed : :expanded
     ```
 
 15. You can add a custom `IMPORT_PATH` folder, which makes files under the path findable by Sass's `@import` directive:
@@ -122,7 +122,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
 
     ```js
-    grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
+    grunt.registerTask( 'prod', [ 'compass-clean', 'compass:prod' ] );
     ```
 
 17. Run "grunt watch" and edit some SASS files :)
