@@ -12,6 +12,7 @@ module.exports = function( grunt ) {
             command = "compass compile",
             src = undefined,
             dest = undefined,
+            specify = undefined,
             config = this.data.config,
             images = this.data.images,
             fonts = this.data.fonts,
@@ -21,8 +22,9 @@ module.exports = function( grunt ) {
             debugsass = this.data.debugsass,
             relativeassets = this.data.relativeassets,
             libRequire = this.data.require,
-            bundleExec = this.data.bundleExec;
-            environment = this.data.environment;
+            bundleExec = this.data.bundleExec,
+            environment = this.data.environment,
+            importPath = this.data.importPath;
 
         if ( this.data.src !== undefined ) {
             src = grunt.template.process(this.data.src);
@@ -32,28 +34,21 @@ module.exports = function( grunt ) {
             dest = grunt.template.process(this.data.dest);
         }
 
+        if( this.data.specify !== undefined ) {
+            specify = grunt.template.process(this.data.specify);
+        }
+
         if ( bundleExec ) {
             command = 'bundle exec ' + command;
         }
 
         if ( src !== undefined && dest !== undefined ) {
+            command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
 
-            // Get stats of `src`, `ENOENT` error will be throw out if src is not an regular path.
-            try {
-                var srcStats = Fs.statSync( Path.resolve( process.cwd(), src ));
-            }
-            catch(e){
-                srcStats = undefined;
-            }
+            // Specify sass files to be compiled in directory `src`.
+            if( specify !== undefined ){
 
-            // If `src` is a directory, use option `--sass-dir`.
-            if( srcStats && srcStats.isDirectory() ){
-                command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
-            }
-            // Otherwise use `src` as the argument for command `compile`.
-            else {
-
-                var matchedFiles = grunt.file.expandFiles( src );
+                var matchedFiles = grunt.file.expandFiles( specify );
                 if( matchedFiles.length > 0 ){
 
                     // Add all but filename begin with underscore after `compile` command.
@@ -62,10 +57,9 @@ module.exports = function( grunt ) {
                             command += ' ' + file;
                         }
                     });
-                    command += ' --css-dir="' + dest + '"';
                 }
                 else {
-                    grunt.log.error( 'No file matched with: ' + src );
+                    grunt.log.error( 'No file matched with: ' + specify );
                     done(false);
                 }
             }
@@ -113,6 +107,10 @@ module.exports = function( grunt ) {
 
         if ( environment !== undefined ) {
             command += ' -e ' + environment;
+        }
+
+        if ( importPath !== undefined ) {
+            command += ' -I ' + importPath;
         }
 
         function puts( error, stdout, stderr ) {
