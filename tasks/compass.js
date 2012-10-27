@@ -6,34 +6,49 @@ module.exports = function( grunt ) {
     // Create a new multi task.
     grunt.registerMultiTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
-        var src, dest, specify, matchedFiles;
+        var puts, command;
+        var exec = require('child_process').exec;
         // Tell grunt this task is asynchronous.
-        var done           = this.async();
-        var exec           = require('child_process').exec;
+        var done = this.async();
+
+        puts = function( error, stdout, stderr ) {
+            grunt.helper( 'consoleOutput', error, stdout, stderr, done );
+        };
+
+        command = grunt.helper( 'buildCommand', this.data );
+
+        exec( command, puts );
+
+        grunt.log.write( '`' + command + '` was initiated.' );
+    });
+
+    grunt.registerHelper( 'buildCommand', function( data ) {
+
+        var src, dest, specify, matchedFiles;
         var command        = "compass compile";
-        var config         = this.data.config;
-        var images         = this.data.images;
-        var fonts          = this.data.fonts;
-        var outputstyle    = this.data.outputstyle;
-        var linecomments   = this.data.linecomments;
-        var forcecompile   = this.data.forcecompile;
-        var debugsass      = this.data.debugsass;
-        var relativeassets = this.data.relativeassets;
-        var libRequire     = this.data.require;
-        var bundleExec     = this.data.bundleExec;
-        var environment    = this.data.environment;
-        var importPath     = this.data.importPath;
+        var config         = data.config;
+        var images         = data.images;
+        var fonts          = data.fonts;
+        var outputstyle    = data.outputstyle;
+        var linecomments   = data.linecomments;
+        var forcecompile   = data.forcecompile;
+        var debugsass      = data.debugsass;
+        var relativeassets = data.relativeassets;
+        var libRequire     = data.require;
+        var bundleExec     = data.bundleExec;
+        var environment    = data.environment;
+        var importPath     = data.importPath;
 
-        if ( this.data.src !== undefined ) {
-            src = grunt.template.process( this.data.src );
+        if ( data.src !== undefined ) {
+            src = grunt.template.process( data.src );
         }
 
-        if ( this.data.dest !== undefined ) {
-            dest = grunt.template.process( this.data.dest );
+        if ( data.dest !== undefined ) {
+            dest = grunt.template.process( data.dest );
         }
 
-        if( this.data.specify !== undefined ) {
-            specify = grunt.template.process( this.data.specify );
+        if( data.specify !== undefined ) {
+            specify = grunt.template.process( data.specify );
         }
 
         if ( bundleExec ) {
@@ -47,8 +62,9 @@ module.exports = function( grunt ) {
             if ( specify !== undefined ) {
 
                 matchedFiles = grunt.file.expandFiles( specify );
+
                 if ( matchedFiles.length > 0 ) {
-                    // Add all but filename begin with underscore after `compile` command.
+                    // Add all files execept those which begin with an underscore to the `compile` command.
                     matchedFiles.forEach( function( file ) {
                         if ( Path.basename( file ).charAt( 0 ) != '_' ) {
                             command += ' ' + file;
@@ -110,22 +126,21 @@ module.exports = function( grunt ) {
             command += ' -I ' + importPath;
         }
 
-        function puts( error, stdout, stderr ) {
+        return command;
+    });
 
-            grunt.log.write( '\n\nCOMPASS output:\n' );
-            grunt.log.write( stdout );
+    grunt.registerHelper( 'consoleOutput', function( error, stdout, stderr, done ) {
 
-            // compass sends falsy error message to stderr... real sass/compass errors come in through the "error" variable.
-            if ( error !== null ) {
-                grunt.log.error( error );
-                done( false );
-            }
-            else {
-                done( true );
-            }
+        grunt.log.write( '\n\nCOMPASS output:\n' );
+        grunt.log.write( stdout );
+
+        // compass sends falsy error message to stderr... real sass/compass errors come in through the "error" variable.
+        if ( error !== null ) {
+            grunt.log.error( error );
+            done( false );
         }
-
-        exec( command, puts );
-        grunt.log.write( '`' + command + '` was initiated.' );
+        else {
+            done( true );
+        }
     });
 };
