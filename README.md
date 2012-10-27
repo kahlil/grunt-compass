@@ -118,12 +118,12 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
 16. `grunt compass-clean`
 
-Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
-Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
+    Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
+    Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
 
-```js
-grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
-```
+    ```js
+    grunt.registerTask('prod', ['compass-clean', 'compass:prod']);
+    ```
 
 17. Run "grunt watch" and edit some SASS files :)
 
