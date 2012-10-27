@@ -155,6 +155,9 @@ compass: {
 }
 ```
 
+# Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](/gruntjs/grunt).
+
 # Real World Examples
 
 * [krzysu](https://github.com/krzysu) posted a Gist with his `compass compile` configuration [over here](https://gist.github.com/2917330).
