@@ -27,8 +27,16 @@ exports[ 'compass' ] = {
   },
   command: function( test ) {
     test.expect( 1 );
-    // tests here
-    test.equal( grunt.helper( 'buildCommand', { src: 'sass', dest: 'css' } ), 'compass compile --sass-dir="sass" --css-dir="css"', 'should return the correct command.' );
+
+    // Options object
+    var data = {
+        src: 'sass',
+        dest: 'css'
+    };
+
+    test.equal( grunt.helper( 'buildCommand', data ),
+        'compass compile --sass-dir="sass" --css-dir="css"',
+        'should return the correct command.' );
     test.done();
   }
 };
