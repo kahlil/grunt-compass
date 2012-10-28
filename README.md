@@ -68,10 +68,19 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     ```javascript
     forcecompile: true
     ```
-9. You can require a given ruby library before running commands like this:
+9. You can require ruby libraries before running commands like this:
 
     ```javascript
-    require: 'animate-sass mylib'
+    require: 'animate-sass'
+    ```
+
+    or
+
+    ```javascript
+    require: [
+      'animate-sass',
+      'mylib'
+    ]
     ```
 
 10. You can add the `--debug-info` option for use with [FireSass](https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/) like so:
@@ -139,7 +148,10 @@ compass: {
         dest: 'assets/dev/css',
         linecomments: true,
         forcecompile: true,
-        require: 'animate-sass mylib',
+        require: [
+          'animate-sass',
+          'mylib'
+        ],
         debugsass: true,
         images: '/path/to/images',
         relativeassets: true
@@ -150,7 +162,10 @@ compass: {
         outputstyle: 'compressed',
         linecomments: false,
         forcecompile: true,
-        require: 'animate-sass mylib',
+        require: [
+          'animate-sass',
+          'mylib'
+        ],
         debugsass: false,
         images: '/path/to/images',
         relativeassets: true
