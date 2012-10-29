@@ -1,13 +1,14 @@
 module.exports = function( grunt ) {
+    'use strict';
 
     // Internal lib.
-    var compass = require('./lib/compass').init(grunt);
+    var compass = require( './lib/compass' ).init( grunt );
 
     // Create a new multi task.
     grunt.registerMultiTask( 'compass', 'This triggers the `compass compile` command.', function() {
 
         var puts, command;
-        var exec = require('child_process').exec;
+        var exec = require( 'child_process' ).exec;
         // Tell grunt this task is asynchronous.
         var done = this.async();
 

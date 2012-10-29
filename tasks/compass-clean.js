@@ -1,12 +1,13 @@
 module.exports = function( grunt ) {
+    'use strict';
 
     // Create a new multi task.
     grunt.registerTask( 'compass-clean', 'This executes the `compass clean` command.', function() {
 
         // Tell grunt this task is asynchronous.
-        var done = this.async(),
-            exec = require('child_process').exec,
-            command = "compass clean";
+        var done    = this.async();
+        var exec    = require( 'child_process' ).exec;
+        var command = 'compass clean';
 
         function puts( error, stdout, stderr ) {
 
@@ -15,10 +16,10 @@ module.exports = function( grunt ) {
 
             if ( error !== null ) {
                 grunt.log.error( error );
-                done(false);
+                done( false );
             }
             else {
-                done(true);
+                done( true );
             }
         }
 

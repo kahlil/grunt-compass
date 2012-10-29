@@ -1,12 +1,12 @@
-exports.init = function(grunt) {
+exports.init = function( grunt ) {
     'use strict';
 
     var exports = {};
-
     var path = require( 'path' );
 
     // Build CSS with compass compile
     exports.buildCommand = function( data, done ) {
+
         var src, dest, specify, matchedFiles;
         var command        = "compass compile";
         var config         = data.config;
