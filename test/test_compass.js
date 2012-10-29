@@ -1,4 +1,5 @@
 var grunt = require( 'grunt' );
+var compass = require('../tasks/lib/compass').init(grunt);
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -34,7 +35,7 @@ exports[ 'compass' ] = {
         dest: 'css'
     };
 
-    test.equal( grunt.helper( 'buildCommand', data ),
+    test.equal( compass.buildCommand( data ),
         'compass compile --sass-dir="sass" --css-dir="css"',
         'should return the correct command.' );
     test.done();
