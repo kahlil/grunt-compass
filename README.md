@@ -175,7 +175,7 @@ v0.2.13: Added `grunt.template.process()` function to process `src` and `dest` p
 
 v0.2.12: The option to set the image path for spriting and the relativeassets to true have been added by @[gcpantazis](https://github.com/gcpantazis).
 
-v0.2.11: @[gcpantazis](https://github.com/gcpantazis) added the option to set the `--debug-info` flag for Sass, useful for integration with the FireSass debugger.
+v0.2.11: @gcpantazis added the option to set the `--debug-info` flag for Sass, useful for integration with the FireSass debugger.
 
 v0.2.10: Added 'gruntplugin' as a keyword in the package.json to get listed [here](http://jsfiddle.net/cowboy/qzRjD/show/).
 
