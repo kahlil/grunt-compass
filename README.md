@@ -46,7 +46,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
     See [minimatch](https://github.com/isaacs/minimatch) for more globbing usage.
 
-    Note a SASS/SCSS file will be ignored if its filename begin with an underscore `_`. And all files you specify **MUST** under directory the `src` specified.
+    Note a SASS/SCSS file will be ignored if its filename begin with an underscore `_`. And all files you specify **MUST** be under the directory that you specified with `src`.
 
     See [SASS-partials](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials).
 

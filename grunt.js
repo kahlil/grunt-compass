@@ -1,12 +1,16 @@
 module.exports = function(grunt) {
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
     compass: {
-      dev: {
-
+      test: {
+        specify: 'test/sass/**/*.scss',
+        outputstyle: 'compressed',
+        linecomments: false,
         src: 'test/sass',
-        dest: 'test/css'
+        dest: 'test/css',
+        debugsass: true
       }
     },
     test: {
@@ -42,7 +46,7 @@ module.exports = function(grunt) {
   grunt.loadTasks('tasks');
 
   // Default task.
-  grunt.registerTask('default', 'lint test');
+  grunt.registerTask('default', 'test lint');
   grunt.registerTask('testCompass', 'compass-clean compass:dev');
 
 };
