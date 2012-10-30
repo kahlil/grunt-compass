@@ -138,5 +138,34 @@ exports[ 'compass' ] = {
             'should return the correct command.' );
 
         test.done();
+    },
+    require: function( test ) {
+        'use strict';
+
+        var dataSet;
+
+        test.expect( 2 );
+
+        // Options object
+        dataSet = {
+            src: 'sass',
+            dest: 'css',
+            require: 'susy'
+        };
+
+        test.equal( compass.buildCommand( dataSet ),
+            'compass compile --sass-dir="sass" --css-dir="css" --require susy',
+            'should return the correct command.' );
+
+        dataSet.require = [
+            'susy',
+            'respond-to'
+        ];
+
+        test.equal( compass.buildCommand( dataSet ),
+            'compass compile --sass-dir="sass" --css-dir="css" --require susy --require respond-to',
+            'should return the correct command.' );
+
+        test.done();
     }
 };

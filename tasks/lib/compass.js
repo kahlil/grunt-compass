@@ -94,7 +94,14 @@ exports.init = function( grunt ) {
         }
 
         if ( libRequire !== undefined ) {
-            command += ' --require '+ libRequire;
+            if ( require('util').isArray(libRequire) ) {
+                libRequire.forEach(function(lib) {
+                  command += ' --require '+ lib;
+                });
+            }
+            else {
+                command += ' --require '+ libRequire;
+            }
         }
 
         if ( forcecompile === true ) {
