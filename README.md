@@ -165,6 +165,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 # Changelog
 
+v0.3.6 @shana added grunt v0.4 compatibility and the grunt-contrib style of structuring gruntplugins. Also: first tests!
+
 v0.3.2 add support for IMPORT_PATH
 
 v0.3.1 adds compiling of single files or a minimatch path via the `src` option
