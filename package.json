@@ -26,9 +26,19 @@
   "engines": {
     "node": "*"
   },
+  "scripts": {
+    "test": "nodeunit test/*"
+  },
   "dependencies": {},
   "devDependencies": {
-    "grunt": ">=0.3.7"
+    "grunt": ">=0.3.7",
+    "nodeunit": "~0.7.4"
   },
-  "keywords": ["grunt.js", "sass", "compass", "grunt", "gruntplugin"]
+  "keywords": [
+    "grunt.js",
+    "sass",
+    "compass",
+    "grunt",
+    "gruntplugin"
+  ]
 }
