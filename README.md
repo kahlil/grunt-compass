@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/aslansky/grunt-compass.png)](http://travis-ci.org/aslansky/grunt-compass)
+
 # grunt-compass
 
 This is a custom grunt.js multitask aka [gruntplugin](http://jsfiddle.net/cowboy/qzRjD/show/) that executes `compass compile` on the command line for you and prints the COMPASS output to `grunt.log.write()`.
