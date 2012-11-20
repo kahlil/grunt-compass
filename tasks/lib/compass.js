@@ -21,6 +21,7 @@ exports.init = function( grunt ) {
         var bundleExec     = data.bundleExec;
         var environment    = data.environment;
         var importPath     = data.importPath;
+        var basePath       = data.basePath;
 
         if ( data.src !== undefined ) {
             src = grunt.template.process( data.src );
@@ -37,7 +38,11 @@ exports.init = function( grunt ) {
         if ( bundleExec ) {
             command = 'bundle exec ' + command;
         }
-
+        
+        if ( basePath ) {
+            command += ' "' + basePath + '"';
+        }
+        
         if ( src !== undefined && dest !== undefined ) {
             command += ' --sass-dir="' + src + '" --css-dir="' + dest + '"';
 
