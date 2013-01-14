@@ -79,6 +79,37 @@ exports[ 'compass' ] = {
 
         test.done();
     },
+    buildPath:function( test ) {
+        'use strict';
+
+        var dataSet1, dataSet2;
+
+        // Expect two tests to be run
+        test.expect( 2 );
+
+        // Test minimatch option
+        dataSet1 = {
+            basePath: 'test/',
+            src: 'sass',
+            dest: 'css'
+        };
+
+        test.equal( compass.buildCommand( dataSet1 ),
+            'compass compile "test/" --sass-dir="sass" --css-dir="css"',
+            'should return the correct command.' );
+
+        // Test specific file
+        dataSet2 = {
+            src: 'sass',
+            dest: 'css'
+        };
+
+        test.equal( compass.buildCommand( dataSet2 ),
+            'compass compile --sass-dir="sass" --css-dir="css"',
+            'should return the correct command.' );
+
+        test.done();
+    },
     outputstyle: function( test ) {
         'use strict';
 
