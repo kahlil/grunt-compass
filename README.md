@@ -50,22 +50,28 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
     See [SASS-partials](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials).
 
-6. You can set your custom output style like this:
+6. Use `basePath` to specify the location in which to run Compass. Useful for when using grunt with multiple projects with seperate folder structures.
+
+    ```javascript
+    basePath: 'path/to/project/'
+    ```   
+
+7. You can set your custom output style like this:
 
     ```javascript
     outputstyle: 'compressed'
     ```
-7. You can disable line comments like this:
+8. You can disable line comments like this:
 
     ```javascript
     linecomments: false
     ```
-8. If you have multiple compass tasks and you want to force compass compilation you can do this:
+9. If you have multiple compass tasks and you want to force compass compilation you can do this:
 
     ```javascript
     forcecompile: true
     ```
-9. You can require ruby libraries before running commands like this:
+10. You can require ruby libraries before running commands like this:
 
     ```javascript
     require: 'animate-sass'
@@ -80,26 +86,26 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     ]
     ```
 
-10. You can add the `--debug-info` option for use with [FireSass](https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/) like so:
+11. You can add the `--debug-info` option for use with [FireSass](https://addons.mozilla.org/en-US/firefox/addon/firesass-for-firebug/) like so:
 
     ```javascript
     debugsass: true
     ```
 
-11. You can set the relative assets to `true` and set an image path for the Compass spriting feature:
+12. You can set the relative assets to `true` and set an image path for the Compass spriting feature:
 
     ```javascript
     images: '/path/to/images',
     relativeassets: true
     ```
 
-12. You can run compass with bundle exec if you need to as well:
+13. You can run compass with bundle exec if you need to as well:
 
     ```javascript
     bundleExec: true
     ```
 
-13. If you have a Compass configuration file, you can use it instead of or in addition to the options in your gruntfile:
+14. If you have a Compass configuration file, you can use it instead of or in addition to the options in your gruntfile:
 
     ```javascript
     config: '/path/to/config'
@@ -107,7 +113,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
     If the path is not absolute, it is relative to the directory containing your gruntfile.
 
-14. If you have a Compass configuration file, you set the environment variable for the config.rb file:
+15. If you have a Compass configuration file, you set the environment variable for the config.rb file:
 
     ```javascript
     environment: 'production'
@@ -119,13 +125,13 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     output_style = ( environment == :production ) ? :compressed : :expanded
     ```
 
-15. You can add a custom `IMPORT_PATH` folder, which makes files under the path findable by Sass's `@import` directive:
+16. You can add a custom `IMPORT_PATH` folder, which makes files under the path findable by Sass's `@import` directive:
 
     ```javascript
     importPath: '/path/to/importPath'
     ```
 
-16. `grunt compass-clean`
+17. `grunt compass-clean`
 
     Sometimes it can be faster to execute `compass clean` and recompile for production instead of doing `--force` compile.
     Now grunt-compass comes with a `grunt compass-clean` task that you can use when registering prod tasks in your gruntfile like:
@@ -134,7 +140,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
     grunt.registerTask( 'prod', [ 'compass-clean', 'compass:prod' ] );
     ```
 
-17. Run "grunt watch" and edit some SASS files :)
+18. Run "grunt watch" and edit some SASS files :)
 
 # An Example Setup
 
