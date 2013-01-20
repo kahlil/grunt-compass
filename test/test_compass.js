@@ -53,7 +53,7 @@ exports[ 'compass' ] = {
         var dataSet1, dataSet2;
 
         // Expect two tests to be run
-        test.expect( 2 );
+        test.expect( 1 );
 
         // Test minimatch option
         dataSet1 = {
