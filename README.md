@@ -1,4 +1,6 @@
-# THIS GRUNT PLUGIN IS DEPRECATED SINCE THE RELEASE OF GRUNT.JS v0.4.0. PLEASE USE [`grunt-contrib-compass`](https://github.com/gruntjs/grunt-contrib-compass) FROM NOW ON.
+# THIS GRUNT PLUGIN IS DEPRECATED SINCE THE RELEASE OF GRUNT.JS v0.4.0.
+
+# PLEASE USE [`grunt-contrib-compass`](https://github.com/gruntjs/grunt-contrib-compass) FROM NOW ON.
 
 -----
 
