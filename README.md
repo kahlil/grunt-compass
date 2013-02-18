@@ -190,6 +190,8 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 # Changelog
 
+v0.3.8: basepath option added.
+
 v0.3.6: @shama added grunt v0.4 compatibility and the grunt-contrib style of structuring gruntplugins. Also: first tests!
 
 v0.3.2: add support for IMPORT_PATH
