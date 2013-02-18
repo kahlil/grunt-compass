@@ -1,3 +1,7 @@
+# THIS GRUNT PLUGIN IS DEPRECATED SINCE THE RELEASE OF GRUNT.JS v0.4.0. PLEASE USE [`grunt-contrib-compass`](https://github.com/gruntjs/grunt-contrib-compass) FROM NOW ON.
+
+-----
+
 # grunt-compass [![Build Status](https://secure.travis-ci.org/kahlil/grunt-compass.png)](http://travis-ci.org/kahlil/grunt-compass)
 
 This is a custom grunt.js multitask aka [gruntplugin](http://jsfiddle.net/cowboy/qzRjD/show/) that executes `compass compile` on the command line for you and prints the COMPASS output to `grunt.log.write()`.
@@ -54,7 +58,7 @@ You need to have [node.js](http://nodejs.org/), [grunt.js](https://github.com/co
 
     ```javascript
     basePath: 'path/to/project/'
-    ```   
+    ```
 
 7. You can set your custom output style like this:
 
