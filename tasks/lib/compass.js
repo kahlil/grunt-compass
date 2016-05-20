@@ -31,6 +31,10 @@ exports.init = function( grunt ) {
             dest = grunt.template.process( data.dest );
         }
 
+				if ( data.images !== undefined ) {
+					images = grunt.template.process( data.images );
+				}
+
         if ( data.specify !== undefined ) {
             specify = grunt.template.process( data.specify );
         }
